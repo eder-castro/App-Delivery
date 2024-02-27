@@ -48,3 +48,25 @@ del pessoa['cor']
 print(pessoa)
 pessoa.update({'cidade': 'Santo André'})
 print(pessoa)
+
+frase = 'Esta frase de poucas palavras tem palavras repetidas para podermos testar a função de contar palavras repetidas em uma frase.'
+
+def contar_palavras(frase):
+    palavras = frase.split()
+    palavras_repetidas = {}
+    for palavra in palavras:
+        if palavra in palavras_repetidas:
+            palavras_repetidas[palavra] += 1
+        else:
+            palavras_repetidas[palavra] = 1
+    return palavras_repetidas
+
+def imprime():
+    print(contar_palavras(frase))
+
+def main():
+    contar_palavras(frase)
+    imprime()
+
+if __name__ == '__main__':
+    main()
